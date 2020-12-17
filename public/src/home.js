@@ -27,7 +27,7 @@ const totalBooksCount = (books) => {
    return arr.sort((itemA,itemB)=>itemA.count < itemB.count ? 1 : -1).slice(0,5);
  }
  
- function mostCommonGenres(books){
+ function getMostCommonGenres(books){
    let result = [];
    for(book in books){
      let{genre} = books[book]
@@ -38,7 +38,7 @@ const totalBooksCount = (books) => {
    return getTopFive(result)
   }
  
- function mostPopularBooks(books){
+ function getMostPopularBooks(books){
    let result = [];
    for(book in books){
      const{title,borrows} = books[book]
@@ -49,7 +49,7 @@ const totalBooksCount = (books) => {
    return getTopFive(result);
  }
  
- function mostPopularAuthors(books, authors){
+ function getMostPopularAuthors(books, authors){
    let result =[];
    for (author in authors){
      const{id,name} = authors[author]
@@ -71,8 +71,8 @@ const totalBooksCount = (books) => {
    totalBooksCount,
    totalAccountsCount,
    booksBorrowedCount,
-   mostCommonGenres,
-   mostPopularBooks,
-   mostPopularAuthors,
+   getMostCommonGenres,
+   getMostPopularBooks,
+   getMostPopularAuthors,
  };
  
